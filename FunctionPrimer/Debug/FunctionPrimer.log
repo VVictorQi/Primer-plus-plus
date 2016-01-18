@@ -1,0 +1,15 @@
+﻿生成启动时间为 2015/10/25 22:30:20。
+     1>项目“F:\NOWWORKCOME\C++PRIMER\FunctionPrimer\FunctionPrimer.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         F:\vs2013pro\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Function.cpp
+         Function.cpp
+     1>f:\nowworkcome\c++primer\functionprimer\function.cpp(183): warning C4715: “print”: 不是所有的控件路径都返回值
+       Link:
+         F:\vs2013pro\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\NOWWORKCOME\C++PRIMER\Debug\FunctionPrimer.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\NOWWORKCOME\C++PRIMER\Debug\FunctionPrimer.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\NOWWORKCOME\C++PRIMER\Debug\FunctionPrimer.lib" /MACHINE:X86 Debug\Function.obj
+     1>Function.obj : error LNK2001: 无法解析的外部符号 "void __cdecl ff(unsigned int)" (?ff@@YAXI@Z)
+     1>F:\NOWWORKCOME\C++PRIMER\Debug\FunctionPrimer.exe : fatal error LNK1120: 1 个无法解析的外部命令
+     1>已完成生成项目“F:\NOWWORKCOME\C++PRIMER\FunctionPrimer\FunctionPrimer.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:01.54
