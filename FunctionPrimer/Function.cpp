@@ -4,34 +4,34 @@
 #include <string>
 #include<cstdarg>
 using namespace std;
-typedef int arrT[10];//ÀàĞÍ±ğÃû
-using arrT = int[10];//µÈ¼ÛÉùÃ÷
-arrT* funlc(int i);//Êı×éÖ¸Õë
-int fact(int val)//½×³Ë
+typedef int arrT[10];//ç±»å‹åˆ«å
+using arrT = int[10];//ç­‰ä»·å£°æ˜
+arrT* funlc(int i);//æ•°ç»„æŒ‡é’ˆ
+int fact(int val)//é˜¶ä¹˜
 {
 	int ret = 1;
 	while (val>1)
 		ret *= val--;
 	return ret;
 }
-size_t count_calls()//·µ»Ø×ÔÉí±»µ÷ÓÃµÄ´ÎÊı
+size_t count_calls()//è¿”å›è‡ªèº«è¢«è°ƒç”¨çš„æ¬¡æ•°
 {
 	static size_t ctr = 0;
 	return ++ctr;
 }
 void print(vector<int >::const_iterator beg,
-	vector<int>::const_iterator end);//ÔÚÍ·ÎÄ¼şÖĞ½øĞĞº¯ÊıÉùÃ÷
+	vector<int>::const_iterator end);//åœ¨å¤´æ–‡ä»¶ä¸­è¿›è¡Œå‡½æ•°å£°æ˜
 
 void reset(int &i)
 {
-	i = 0;//¶ÔÓÚÒıÓÃÀàËÆÓÚÖ¸Õë£¬²»Í¬ÓÚ¸±±¾»úÖÆ£»Ê¹ÓÃÒıÓÃ±ÜÃâ¿½±´£»½ÚÔ¼¿Õ¼ä²Ù×÷
+	i = 0;//å¯¹äºå¼•ç”¨ç±»ä¼¼äºæŒ‡é’ˆï¼Œä¸åŒäºå‰¯æœ¬æœºåˆ¶ï¼›ä½¿ç”¨å¼•ç”¨é¿å…æ‹·è´ï¼›èŠ‚çº¦ç©ºé—´æ“ä½œ
 }
-bool isShorter(const string&s1, const string &s2)//¶ÔÓÚÕâÀï£¬Èç¹ûº¯ÊıÎŞĞè¸Ä±äÒıÓÃĞÎ²ÎµÄÖµ£¬×îºÃ½«ÆäÉùÃ÷Îª³£Á¿ÒıÓÃ£»
+bool isShorter(const string&s1, const string &s2)//å¯¹äºè¿™é‡Œï¼Œå¦‚æœå‡½æ•°æ— éœ€æ”¹å˜å¼•ç”¨å½¢å‚çš„å€¼ï¼Œæœ€å¥½å°†å…¶å£°æ˜ä¸ºå¸¸é‡å¼•ç”¨ï¼›
 {
-	return s1.size() > s2.size();//±È½ÏÁ½´®×Ö·û´®ÊÇ·ñÏàµÈ
+	return s1.size() > s2.size();//æ¯”è¾ƒä¸¤ä¸²å­—ç¬¦ä¸²æ˜¯å¦ç›¸ç­‰
 }
 string::size_type find_char(const string &s, char c, string::size_type &occurs)
-{//¶ÔÓÚÒ»´ÎĞÔÏë·µ»ØºÃ¼¸¸öÊı¾İµÄÈË£¬ÒªÃ´ÖØĞÂ¶¨ÒåÊı¾İ½á¹¹£¬ÒªÃ´Ìí¼ÓÒ»¸öÒşÊ½²ÎÊı
+{//å¯¹äºä¸€æ¬¡æ€§æƒ³è¿”å›å¥½å‡ ä¸ªæ•°æ®çš„äººï¼Œè¦ä¹ˆé‡æ–°å®šä¹‰æ•°æ®ç»“æ„ï¼Œè¦ä¹ˆæ·»åŠ ä¸€ä¸ªéšå¼å‚æ•°
 	auto ret = s.size();
 	occurs = 0;
 	for (decltype(ret) i = 0; i != s.size(); ++i)
@@ -45,24 +45,24 @@ string::size_type find_char(const string &s, char c, string::size_type &occurs)
 	}
 	return ret;
 }
-void func(const int i)//func ÄÜ¶ÁÈ¡i£¬µ«ÊÇ²»ÄÜÏòiĞ´Öµ£¬const¶¨Òå
+void func(const int i)//func èƒ½è¯»å–iï¼Œä½†æ˜¯ä¸èƒ½å‘iå†™å€¼ï¼Œconstå®šä¹‰
 {
 }
-void funcc(int i )//i)//error C2084: º¯Êı¡°void func(const int)¡±ÒÑÓĞÖ÷Ìå;²Î¼û¡°func¡±µÄÇ°Ò»¸ö¶¨Òå
-{//Õâ¾ä»°ÊÇ´íÎóµÄ£¬ÔÚÕâÀï¾ÍÊÇÎªÁËÌåÏÖÕâĞ©Çø±ğ
+void funcc(int i )//i)//error C2084: å‡½æ•°â€œvoid func(const int)â€å·²æœ‰ä¸»ä½“;å‚è§â€œfuncâ€çš„å‰ä¸€ä¸ªå®šä¹‰
+{//è¿™å¥è¯æ˜¯é”™è¯¯çš„ï¼Œåœ¨è¿™é‡Œå°±æ˜¯ä¸ºäº†ä½“ç°è¿™äº›åŒºåˆ«
 
 }
 
-//¶ÔÓÚÖ¸ÕëºÍÒıÓÃĞÎ²ÎÓÃconst ĞŞÊÎ
+//å¯¹äºæŒ‡é’ˆå’Œå¼•ç”¨å½¢å‚ç”¨const ä¿®é¥°
 
 int i = 42;
 const int *cp = &i;
 const int &r = i;
 const int &r2 = 42;
-//int *p = cp;ÀàĞÍ²»Í¬£¬int &r3=r;int &r4=42;//·Ç³£Á¿ÒıÓÃ
+//int *p = cp;ç±»å‹ä¸åŒï¼Œint &r3=r;int &r4=42;//éå¸¸é‡å¼•ç”¨
 bool is_sentence(const string&s)
 {
-	string::size_type ctr = 0;//¼ì²âs×Ö·û´®ÊÇ·ñÎªÒ»¸ö¾ä×Ó
+	string::size_type ctr = 0;//æ£€æµ‹så­—ç¬¦ä¸²æ˜¯å¦ä¸ºä¸€ä¸ªå¥å­
 	return find_char(s, '.', ctr) == s.size() - 1 && ctr == 1;
 }
 bool is_enpty(string&s)
@@ -70,21 +70,21 @@ bool is_enpty(string&s)
 	return s.empty();
 }
  
-//¹ÜÀíÖ¸Õë³£ÓÃµÄÈıÖÖ¼¼Êõ
-//1.Ê¹ÓÃ±ê¼ÇÖ¸¶¨Êı×é³¤¶È
+//ç®¡ç†æŒ‡é’ˆå¸¸ç”¨çš„ä¸‰ç§æŠ€æœ¯
+//1.ä½¿ç”¨æ ‡è®°æŒ‡å®šæ•°ç»„é•¿åº¦
 void print(const char *cp)
-{				while (*cp)//Ã¿Ò»¸ö×Ö·û´®ÖĞ½áÊø·ûÎª/0×÷ÎªÅĞ¶ÏÅĞ¶Ï½áÊø·ûÎª¿Õ£»
+{				while (*cp)//æ¯ä¸€ä¸ªå­—ç¬¦ä¸²ä¸­ç»“æŸç¬¦ä¸º/0ä½œä¸ºåˆ¤æ–­åˆ¤æ–­ç»“æŸç¬¦ä¸ºç©ºï¼›
 			cout << *cp++;
-}//ÊÊÓÃÓÚÓĞ½áÊø·û±êÊ¶×Ö·û´®£¬¶ÔÓÚÕûĞÎÖ®ÀàÊı×é£¬»ù±¾ÎŞĞ§£»
-//2.Ê¹ÓÃ±ê×¼¿â¹æ·¶¼´ÀûÓÃÈİÆ÷
+}//é€‚ç”¨äºæœ‰ç»“æŸç¬¦æ ‡è¯†å­—ç¬¦ä¸²ï¼Œå¯¹äºæ•´å½¢ä¹‹ç±»æ•°ç»„ï¼ŒåŸºæœ¬æ— æ•ˆï¼›
+//2.ä½¿ç”¨æ ‡å‡†åº“è§„èŒƒå³åˆ©ç”¨å®¹å™¨
 void print(const int *beg, const int *end)
 {
 	while (beg!= end)
 		cout << *beg++ << endl;
-}//±ê×¼¿âº¯Êıbegin()ºÍend();
+}//æ ‡å‡†åº“å‡½æ•°begin()å’Œend();
 
 
-//3.ÏÔÊ½´«µİÒ»¸öÊı×é´óĞ¡µÄĞÎ²Î
+//3.æ˜¾å¼ä¼ é€’ä¸€ä¸ªæ•°ç»„å¤§å°çš„å½¢å‚
 void print(const int ia[], size_t size)
 {
 	for (size_t i = 0; i != size;i++)
@@ -93,8 +93,8 @@ void print(const int ia[], size_t size)
 
 	}
 }
-void print(int (&arr)[10])//&arr×óÓÒµÄÀ¨ºÅ±Ø²»¿ÉÉÙ£»²»¼ÓÀ¨ºÅÊÇÖ¸½«arrÉùÃ÷ÎªÒıÓÃµÄÊı×é;
-//¼ÓºóÎª¾ßÓĞ10¸öÕûĞÍÊı×éµÄÒıÓÃ
+void print(int (&arr)[10])//&arrå·¦å³çš„æ‹¬å·å¿…ä¸å¯å°‘ï¼›ä¸åŠ æ‹¬å·æ˜¯æŒ‡å°†arrå£°æ˜ä¸ºå¼•ç”¨çš„æ•°ç»„;
+//åŠ åä¸ºå…·æœ‰10ä¸ªæ•´å‹æ•°ç»„çš„å¼•ç”¨
 {
 	for (auto elem:arr)
 	{
@@ -103,8 +103,8 @@ void print(int (&arr)[10])//&arr×óÓÒµÄÀ¨ºÅ±Ø²»¿ÉÉÙ£»²»¼ÓÀ¨ºÅÊÇÖ¸½«arrÉùÃ÷ÎªÒıÓÃµ
 }
 
 void print(int (*matrix)[10],int Rowsize);
-//int (*matrix)[10], int Rowsize);¾ßÓĞÊÇ¸öÕûĞÎµÄÊı×éÖ¸Õë
-//int *matrix[10]²»Í¬£¬10¸öÖ¸Õë×é³ÉµÄÊı×é£»
+//int (*matrix)[10], int Rowsize);å…·æœ‰æ˜¯ä¸ªæ•´å½¢çš„æ•°ç»„æŒ‡é’ˆ
+//int *matrix[10]ä¸åŒï¼Œ10ä¸ªæŒ‡é’ˆç»„æˆçš„æ•°ç»„ï¼›
 
 
 initializer_list<int>lii;
@@ -113,11 +113,11 @@ void error_msg(initializer_list<string> li)
 {
 	for (auto beg = li.begin(); beg != li.end();++beg)
 	{
-		cout<<*beg<<endl;//ÉÙÁËstringÍ·ÎÄ¼ş
+		cout<<*beg<<endl;//å°‘äº†stringå¤´æ–‡ä»¶
 	}
-}//ÈôÏòinitializer_listĞÎ²ÎÖĞ´«µİÒ»¸öÖµµÄĞòÁĞ±ØĞë·ÅÔÚÒ»¶Ô»¨À¨ºÅÖĞ£»
+}//è‹¥å‘initializer_listå½¢å‚ä¸­ä¼ é€’ä¸€ä¸ªå€¼çš„åºåˆ—å¿…é¡»æ”¾åœ¨ä¸€å¯¹èŠ±æ‹¬å·ä¸­ï¼›
 
-//void error_msg(ErrCode e, initializer_list<string>li);ErrCode ¿ÉÄÜÓĞ¸öÕâ¸öÒì³£Àà£»
+//void error_msg(ErrCode e, initializer_list<string>li);ErrCode å¯èƒ½æœ‰ä¸ªè¿™ä¸ªå¼‚å¸¸ç±»ï¼›
 //{
 //	cout << e.msg() << ":";
 //	for (const auto &elem : li)
@@ -125,7 +125,7 @@ void error_msg(initializer_list<string> li)
 //	cout << endl;
 //}
 void foo(...);
-void foo(int ,int, ...);//parm_list ²ÎÊıÁĞ±í
+void foo(int ,int, ...);//parm_list å‚æ•°åˆ—è¡¨
 void swap(int &v1, int&v2)
 {
 	if (v1 == v2)
@@ -133,8 +133,8 @@ void swap(int &v1, int&v2)
 	int tmp = v2;
 	v2 = v1;
 	v1 = tmp;
-	//return 0£»´íÎó£¬²úÉú
-}//½»»»º¯Êı£»
+	//return 0ï¼›é”™è¯¯äº§ç”Ÿ
+}//äº¤æ¢å‡½æ•°ï¼›
 
 bool str_subrange(const string &s1, const string &s2)
 {
@@ -144,19 +144,19 @@ bool str_subrange(const string &s1, const string &s2)
 	for (decltype(size) i = 0; i != size; ++i)
 	{
 		if (s1[i] != s2[i])
-			return true;//return Ö±½Ó´íÎó
-		//warning C4715: ¡°str_subrange¡±: ²»ÊÇËùÓĞµÄ¿Ø¼şÂ·¾¶¶¼·µ»ØÖµ´Ë´¦Ó¦¸ÃÓĞreturn
-		//ÔÚº¬ÓĞreturnµÄforÑ­»·Óï¾äÍâÃæÒ²Ó¦¸ÃÓĞÒ»Ìõreturn£»Èç¹ûÃ»ÓĞÔò¸Ã³ÌĞò´íÎó£¬ºÜ¶à±àÒëÆ÷ÎŞ·¨Ê¶±ğÕâ¸ö´íÎó;
+			return true;//return ç›´æ¥é”™è¯¯
+		//warning C4715: â€œstr_subrangeâ€: ä¸æ˜¯æ‰€æœ‰çš„æ§ä»¶è·¯å¾„éƒ½è¿”å›å€¼æ­¤å¤„åº”è¯¥æœ‰return
+		//åœ¨å«æœ‰returnçš„forå¾ªç¯è¯­å¥å¤–é¢ä¹Ÿåº”è¯¥æœ‰ä¸€æ¡returnï¼›å¦‚æœæ²¡æœ‰åˆ™è¯¥ç¨‹åºé”™è¯¯ï¼Œå¾ˆå¤šç¼–è¯‘å™¨æ— æ³•è¯†åˆ«è¿™ä¸ªé”™è¯¯;
 	}
-	return true;//Vs2013µÄ±àÒëÆ÷¿ÉÒÔÊ¶±ğÕâ¸ö´íÎó
+	return true;//Vs2013çš„ç¼–è¯‘å™¨å¯ä»¥è¯†åˆ«è¿™ä¸ªé”™è¯¯
 }
 	string make_plural(size_t ctr,const string &word,const string&ending)
 	{
-		return (ctr > 1) ? word + ending : word;//·µ»ØÖµ ·µ»ØÒ»¸öÁÙÊ±¶ÔÏó
+		return (ctr > 1) ? word + ending : word;//è¿”å›å€¼ è¿”å›ä¸€ä¸ªä¸´æ—¶å¯¹è±¡
 	}
 	vector<string>process(string expected,string actual)
 	{
-		if (expected.empty())//»¨À¨ºÅ·µ»ØÖµÊÇc++11ÖĞĞÂÌí¼ÓµÄÊôĞÔ²âÊÔ
+		if (expected.empty())//èŠ±æ‹¬å·è¿”å›å€¼æ˜¯c++11ä¸­æ–°æ·»åŠ çš„å±æ€§æµ‹è¯•
 		{
 			return{};
 		}
@@ -166,13 +166,13 @@ bool str_subrange(const string &s1, const string &s2)
 			return{ "Function", expected, actual };
 	}
 
-	int  factorial(int val)//½×³ËµÄµİ¹éËã·¨
+	int  factorial(int val)//é˜¶ä¹˜çš„é€’å½’ç®—æ³•
 	{
 		if (val > 1)
 			return factorial(val - 1)*val;
 		return 1;
 	}
-	int print(vector<int >&li,int i=0)//µİ¹éÊä³övectorÖĞµÄÖµ
+	int print(vector<int >&li,int i=0)//é€’å½’è¾“å‡ºvectorä¸­çš„å€¼
 	{
 		
 		if (i==li.size())
@@ -181,71 +181,71 @@ bool str_subrange(const string &s1, const string &s2)
 		print(li, i);
 	
 	}
-	auto  function(int i)->int(*)[10];//Î²ËæµÄ·µ»ØÀàĞÍĞèÒªauto
-	//Ê¹ÓÃdecltype
+	auto  function(int i)->int(*)[10];//å°¾éšçš„è¿”å›ç±»å‹éœ€è¦auto
+	//ä½¿ç”¨decltype
 	int odd[] = { 1, 3, 5, 7, 9 };
 	int even[] = { 2, 5, 346, 7, 3};
-	decltype(odd)*arrptr(int i)//Ö¸ÏòÒ»¸öÖ¸ÏòÊı×éµÄÖ¸Õë¶øÇÒÁ½¸öÊı×éÎ¬¶È±ØĞëÏàÍ¬
+	decltype(odd)*arrptr(int i)//æŒ‡å‘ä¸€ä¸ªæŒ‡å‘æ•°ç»„çš„æŒ‡é’ˆè€Œä¸”ä¸¤ä¸ªæ•°ç»„ç»´åº¦å¿…é¡»ç›¸åŒ
 	{
 		return (i % 2) ? &odd : &even;
 	}
 	//////////////////////////////////////////////////////////////////////////
-	//º¯ÊıÖØÔØ
+	//å‡½æ•°é‡è½½
 	//////////////////////////////////////////////////////////////////////////
-	//mainº¯Êı²»ÄÜÖØÔØ
+	//mainå‡½æ•°ä¸èƒ½é‡è½½
 	
 	
-	//Record  lookup(const phone&);ÊÂÊµÖ¤Ã÷£¬RecordÊÇ±ğÃû£¬ÈÃ¶ÁÕßÇáÒ×ÖªµÀÊ²Ã´ÒâË¼£¬ÊôÓÚ×ÔÈ»ÃèÊöÓïÑÔ£¬Î±´úÂë
-	//Screen&moveHome();Í¬ÉÏ
+	//Record  lookup(const phone&);äº‹å®è¯æ˜ï¼ŒRecordæ˜¯åˆ«åï¼Œè®©è¯»è€…è½»æ˜“çŸ¥é“ä»€ä¹ˆæ„æ€ï¼Œå±äºè‡ªç„¶æè¿°è¯­è¨€ï¼Œä¼ªä»£ç 
+	//Screen&moveHome();åŒä¸Š
 	//////////////////////////////////////////////////////////////////////////
-	//const_castÔÚÖØÔØÖĞ×îÓĞÓÃ
+	//const_caståœ¨é‡è½½ä¸­æœ€æœ‰ç”¨
 	const string &shorterString(const string &s1, const string &s2)
 	{
-		cout << "µ÷ÓÃ const string &" << endl;
-		return s1.size() <= s2.size() ? s1 : s2;//·µ»ØÀàĞÍ¶¼ÊÇÒıÓÃ
+		cout << "è°ƒç”¨ const string &" << endl;
+		return s1.size() <= s2.size() ? s1 : s2;//è¿”å›ç±»å‹éƒ½æ˜¯å¼•ç”¨
 	}
 	string &shorterString(string &s1, string &s2)
 	{
-		cout << "µ÷ÓÃ string &2" << endl;
+		cout << "è°ƒç”¨ string &2" << endl;
 		auto &r = shorterString((const_cast<const string&>(s1)), (const_cast<const string &>(s2)));
-		return const_cast<string &>(r);//ÎªÁË°²È«
+		return const_cast<string &>(r);//ä¸ºäº†å®‰å…¨
 	}
 	//////////////////////////////////////////////////////////////////////////
-	//ÌØÊâÓÃÍ¾ÓïÑÔÌØĞÔ
+	//ç‰¹æ®Šç”¨é€”è¯­è¨€ç‰¹æ€§
 	//////////////////////////////////////////////////////////////////////////
 	typedef string::size_type sz;
 	string screen(sz ht = 24, sz wid = 80, char background = ' ');
-	//string screen(sz ht,sz wid, char background = ' ');//²»ÄÜĞŞ¸ÄÄ¬ÈÏÊµ²Î£¬ÔÚÊµ²ÎÒÑ¾­ÉùÃ÷¹ıµÄº¯ÊıÖĞ
+	//string screen(sz ht,sz wid, char background = ' ');//ä¸èƒ½ä¿®æ”¹é»˜è®¤å®å‚ï¼Œåœ¨å®å‚å·²ç»å£°æ˜è¿‡çš„å‡½æ•°ä¸­
 	string screen(sz ht,sz wid, char background );
-//	constexpr int new_sz(){ return 43; };vs2013Ä¬ÈÏ²»Ö§³Öconstexpr¹Ø¼ü×Ö
+//	constexpr int new_sz(){ return 43; };vs2013é»˜è®¤ä¸æ”¯æŒconstexprå…³é”®å­—
 	//////////////////////////////////////////////////////////////////////////
-	//µ÷ÊÔ°ïÖú
+	//è°ƒè¯•å¸®åŠ©
 	//////////////////////////////////////////////////////////////////////////
-	//Á½ÏîÔ¤´¦Àíºê  assertºÍNDEBUG;
+	//ä¸¤é¡¹é¢„å¤„ç†å®  assertå’ŒNDEBUG;
 	void printl(const int ia[], size_t size)
 	{
 		#ifndef  NDEBUG
-		//vs2013×öÁËÓÅ»¯ __FUNCTION__´æ·Åº¯ÊıµÄÃû×Ö¶ø²»ÊÇ__FUNC__
+		//vs2013åšäº†ä¼˜åŒ– __FUNCTION__å­˜æ”¾å‡½æ•°çš„åå­—è€Œä¸æ˜¯__FUNC__
 		cerr << __FUNCTION__ << "array size is" << size << endl;
 		#endif
 	}
 	//////////////////////////////////////////////////////////////////////////
-	///µ÷ÓÃÖØÔØº¯ÊıÊ±£¬Ó¦¸Ã¾¡Á¿±ÜÃâÇ¿ÖÆÀàĞÍ×ª»»¡£Èç¹ûÔÚÊµ¼ÊÓ¦ÓÃÖĞÈ·ÊµĞèÒªÇ¿ÖÆÀàĞÍ×ª»»£¬ÕâËµÃ÷ÎÒÃÇÉè¼ÆµÄĞÎ²Î¼¯ºÏ²»ºÏÀí¡£
+	///è°ƒç”¨é‡è½½å‡½æ•°æ—¶ï¼Œåº”è¯¥å°½é‡é¿å…å¼ºåˆ¶ç±»å‹è½¬æ¢ã€‚å¦‚æœåœ¨å®é™…åº”ç”¨ä¸­ç¡®å®éœ€è¦å¼ºåˆ¶ç±»å‹è½¬æ¢ï¼Œè¿™è¯´æ˜æˆ‘ä»¬è®¾è®¡çš„å½¢å‚é›†åˆä¸åˆç†ã€‚
 	//////////////////////////////////////////////////////////////////////////
 
-	//º¯ÊıÖ¸Õë
+	//å‡½æ•°æŒ‡é’ˆ
 	bool lengthCompare(const string &, const string &);
-	bool(*pf)(const string &, const string &);//pfÊÇº¯ÊıÖ¸Õë£¬Ö¸ÏòÕâ¸öº¯ÊıµÄÖ¸Õë¡£
-	bool *plf(const string &, const string &);//·µ»ØÒ»¸öÎªboolÖ¸ÕëµÄµÄº¯Êı¡£
+	bool(*pf)(const string &, const string &);//pfæ˜¯å‡½æ•°æŒ‡é’ˆï¼ŒæŒ‡å‘è¿™ä¸ªå‡½æ•°çš„æŒ‡é’ˆã€‚
+	bool *plf(const string &, const string &);//è¿”å›ä¸€ä¸ªä¸ºboolæŒ‡é’ˆçš„çš„å‡½æ•°ã€‚
 	void ff(int *);
 	void ff(unsigned int);
-	void(*pf1)(unsigned int) = ff;//ĞèÒªĞÎ²ÎÀàĞÍ·µ»ØÀàĞÍ¾«È·Æ¥Åä²Å¿ÉÒÔÊ¹ÓÃ
-	void useBigger(const string &s1, const string &s2, bool pf(const string&, const string &));//ÒşÊ½µÄ½«pf×ª»»Îªº¯ÊıÖ¸Õë(*pf)
-	typedef decltype(lengthCompare) Func2;//decltype µÄ·µ»ØÀàĞÍÎªº¯ÊıÀàĞÍ²¢²»ÊÇÖ¸ÕëÀàĞÍ¡£ËùÒÔº¯ÊıfuncÕâ Îªº¯ÊıÀàĞÍµ«ÊÇÔÚÆäËûº¯Êıµ÷ÓÃÊ±£¬±àÒëÆ÷»á×Ô¶¯½«Æä×ª»»ÎªÖ¸ÕëÀàĞÍ£»
+	void(*pf1)(unsigned int) = ff;//éœ€è¦å½¢å‚ç±»å‹è¿”å›ç±»å‹ç²¾ç¡®åŒ¹é…æ‰å¯ä»¥ä½¿ç”¨
+	void useBigger(const string &s1, const string &s2, bool pf(const string&, const string &));//éšå¼çš„å°†pfè½¬æ¢ä¸ºå‡½æ•°æŒ‡é’ˆ(*pf)
+	typedef decltype(lengthCompare) Func2;//decltype çš„è¿”å›ç±»å‹ä¸ºå‡½æ•°ç±»å‹å¹¶ä¸æ˜¯æŒ‡é’ˆç±»å‹ã€‚æ‰€ä»¥å‡½æ•°funcè¿™ ä¸ºå‡½æ•°ç±»å‹ä½†æ˜¯åœ¨å…¶ä»–å‡½æ•°è°ƒç”¨æ—¶ï¼Œç¼–è¯‘å™¨ä¼šè‡ªåŠ¨å°†å…¶è½¬æ¢ä¸ºæŒ‡é’ˆç±»å‹ï¼›
 	typedef bool func1(const string&, const string &);
 
 	//////////////////////////////////////////////////////////////////////////
-	typedef decltype(lengthCompare) *Funcp2;//±àÒëÆ÷»á×Ô¶¯½«º¯ÊıÃû×ª»»ÎªÖ¸ÕëÃû funcp ÊÇº¯ÊıÖ¸ÕëÀàĞÍ
+	typedef decltype(lengthCompare) *Funcp2;//ç¼–è¯‘å™¨ä¼šè‡ªåŠ¨å°†å‡½æ•°åè½¬æ¢ä¸ºæŒ‡é’ˆå funcp æ˜¯å‡½æ•°æŒ‡é’ˆç±»å‹
 	typedef bool *funcp1(const string&, const string &);
 
 
@@ -253,9 +253,9 @@ bool str_subrange(const string &s1, const string &s2)
 int main(int argc,char **argv)
 {
 	string window;
-//	window = screen();//¸³ÖµÓï¾ä²»ÄÜ·ÅÔÚÖ÷º¯ÊıÍâÃæ
-//	window = screen(66);//±ØĞëÒªÓĞº¯ÊıÊµÏÖÌå
-//	window = screen(66, 77);//ºóĞøÄ¬ÈÏÊµ²ÎÌî²¹¿ÕÓàÎ»ÖÃ£¬Ä¬ÈÏÖ»ÄÜÊ¡ÂÔÎ²²¿Êµ²Î£¬Í·²¿²»¿ÉÒÔÖ±½ÓÊ¡ÂÔÌîĞ´Î²²¿ĞÎ²Î
+//	window = screen();//èµ‹å€¼è¯­å¥ä¸èƒ½æ”¾åœ¨ä¸»å‡½æ•°å¤–é¢
+//	window = screen(66);//å¿…é¡»è¦æœ‰å‡½æ•°å®ç°ä½“
+//	window = screen(66, 77);//åç»­é»˜è®¤å®å‚å¡«è¡¥ç©ºä½™ä½ç½®ï¼Œé»˜è®¤åªèƒ½çœç•¥å°¾éƒ¨å®å‚ï¼Œå¤´éƒ¨ä¸å¯ä»¥ç›´æ¥çœç•¥å¡«å†™å°¾éƒ¨å½¢å‚
 //	window = screen(88, 99, 'f');
 	const string s1 = "hello";
 	const string s2 = "world";
